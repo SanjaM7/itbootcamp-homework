@@ -1,0 +1,1 @@
+Da bi radilo zbog linkova folder mreza treba da nalazi u htdocs.

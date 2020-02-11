@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        .grid-row:before,
+        .grid-row:after,
+        .container:before,
+        .container:after {
+            content: "";
+            clear: both;
+            display: table;
+        }
+
+        .grid-col {
+            float: left;
+            width: 100%;
+        }
+
+        /*mobile*/
+        .grid-col.s1 {
+            width: 8.33333%
+        }
+
+        .grid-col.s2 {
+            width: 16.66666%
+        }
+
+        .grid-col.s3 {
+            width: 24.99999%
+        }
+
+        .grid-col.s4 {
+            width: 33.33333%
+        }
+
+        .grid-col.s5 {
+            width: 41.66666%
+        }
+
+        .grid-col.s6 {
+            width: 49.99999%
+        }
+
+        .grid-col.s7 {
+            width: 58.33333%
+        }
+
+        .grid-col.s8 {
+            width: 66.66666%
+        }
+
+        .grid-col.s9 {
+            width: 74.99999%
+        }
+
+        .grid-col.s10 {
+            width: 83.33333%
+        }
+
+        .grid-col.s11 {
+            width: 91.66666%
+        }
+
+        .grid-col.s12 {
+            width: 99.99999%
+        }
+
+        /*tablet*/
+        @media (min-width:601px) {
+            .grid-col.m1 {
+                width: 8.33333%
+            }
+
+            .grid-col.m2 {
+                width: 16.66666%
+            }
+
+            .grid-col.m3,
+            .quarter {
+                width: 24.99999%
+            }
+
+            .grid-col.m4,
+            .third {
+                width: 33.33333%
+            }
+
+            .grid-col.m5 {
+                width: 41.66666%
+            }
+
+            .grid-col.m6,
+            .half {
+                width: 49.99999%
+            }
+
+            .grid-col.m7 {
+                width: 58.33333%
+            }
+
+            .grid-col.m8,
+            .twothird {
+                width: 66.66666%
+            }
+
+            .grid-col.m9,
+            .threequarter {
+                width: 74.99999%
+            }
+
+            .grid-col.m10 {
+                width: 83.33333%
+            }
+
+            .grid-col.m11 {
+                width: 91.66666%
+            }
+
+            .grid-col.m12 {
+                width: 99.99999%
+            }
+
+            .btn {
+                width: auto;
+                float: right;
+            }
+        }
+
+        /*desktop*/
+        @media (min-width:993px) {
+            .grid-col.l1 {
+                width: 8.33333%
+            }
+
+            .grid-col.l2 {
+                width: 16.66666%
+            }
+
+            .grid-col.l3 {
+                width: 24.99999%
+            }
+
+            .grid-col.l4 {
+                width: 33.33333%
+            }
+
+            .grid-col.l5 {
+                width: 41.66666%
+            }
+
+            .grid-col.l6 {
+                width: 49.99999%
+            }
+
+            .grid-col.l7 {
+                width: 58.33333%
+            }
+
+            .grid-col.l8 {
+                width: 66.66666%
+            }
+
+            .grid-col.l9 {
+                width: 74.99999%
+            }
+
+            .grid-col.l10 {
+                width: 83.33333%
+            }
+
+            .grid-col.l11 {
+                width: 91.66666%
+            }
+
+            .grid-col.l12 {
+                width: 99.99999%
+            }
+        }
+
+        .container {
+            border-radius: 5px;
+            background-color: #f2f2f2;
+            padding: 20px;
+            margin: 20px;
+        }
+
+        input[type=text],
+        input[type=search],
+        select,
+        textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            resize: vertical;
+        }
+        
+        input[type=search] {
+            padding: 12px 20px 12px 41px;
+            width: 50%;
+        }
+        
+        input[type=submit] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        input[type=submit]:hover {
+            background-color: #45a049;
+        }
+
+        .flex-container {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        [class*="grid-col"] {
+            margin-top: 6px;
+            margin-bottom: 16px;
+        }
+
+        .search-position {
+            position: absolute;
+            z-index: 2;
+            display: block;
+            width: 41px;
+            height: 41px;
+            line-height: 41px;
+            text-align: center;
+            pointer-events: none;
+            color: #ccc;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <form action="/action_page.php">
+            <div class="grid-row flex-container">
+                <div class="grid-col m3">
+                    <label>Ime i prezime</label>
+                </div>
+                <div class="grid-col m9">
+                    <input type="text" placeholder="Unesite svoje ime i prezime...">
+                </div>
+            </div>
+            <div class="grid-row flex-container">
+                <div class="grid-col m3">
+                    <label>Pretrazite</label>
+                </div>
+                <div class="grid-col m9 search">
+                    <span class="fa fa-search search-position"></span>
+                    <input type="search" placeholder="Pretrazite...">
+                </div>
+            </div>
+            <div class="grid-row flex-container">
+                <div class="grid-col m3">
+                    <label>Zemlja</label>
+                </div>
+                <div class="grid-col m9">
+                    <select>
+                        <option value="italija">Italija</option>
+                        <option value="spanija">Spanija</option>
+                        <option value="nemacka">Nemacka</option>
+                    </select>
+                </div>
+            </div>
+            <div class="grid-row">
+                <div class="grid-col m3">
+                    <label>Opis</label>
+                </div>
+                <div class="grid-col m9">
+                    <textarea placeholder="Napisite neki opis..." style="height:200px"></textarea>
+                </div>
+            </div>
+
+            <div class="btn">
+                <input type="submit" value="Potvrdite">
+            </div>
+        </form>
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Contact tree</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Helvetica">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Helvetica, Sans-Serif;
+            font-size: 26px;
+            font-weight: 900;
+            letter-spacing: 6px;
+            background-color: rgb(255, 250, 101, 0.3);
+        }
+
+        h1 {
+            text-align: center;
+            margin: 30px 0;
+        }
+
+        table {
+            width: 100%;
+        }
+
+        table th {
+            padding: 20px 0;
+        }
+
+        .container {
+            position: relative;
+            text-align: center;          
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            overflow: hidden; 
+
+        }
+
+        .container img {
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 50%;
+        }
+
+        .text-box {
+            position: absolute;
+            top: 75%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 5px 5px 0px;
+        }
+
+        .family {
+            color: #0fb9b1;
+        }
+
+        table caption b,
+        table th span {
+            background-color: rgb(255, 255, 255);
+            padding: 10px 10px 5px;
+
+        }
+
+        .family img {
+            border: 5px dashed #0fb9b1;
+        }
+
+        .friends {
+            color: #eb3b5a;
+        }
+
+        .friends img {
+            border: 5px dashed #eb3b5a;
+        }
+
+        .colleagues {
+            color: #8854d0;
+        }
+
+        .colleagues img {
+            border: 5px dashed #8854d0;
+        }
+
+        #homer {
+            color: #fff200;
+        }
+
+        #homer img {
+            border: 5px solid #fff200;
+        }
+    </style>
+</head>
+
+<body>
+
+    <table>
+        <caption>
+            <h1><b>Homer's Contacts</b></h1>
+        </caption>
+        <tbody class="family">
+            <tr>
+                <th colspan="5"><span>Homer's family</span></th>
+            </tr>
+            <tr>
+                <td id="homer">
+                    <div class="container">
+                        <img src="homer.png">
+                        <div class="text-box">HOMER</div>
+                    </div>
+                </td>
+                <td>
+                    <div class="container">
+                        <img src="marge.gif">
+                        <div class="text-box">MARGE</div>
+                    </div>
+                </td>
+                <td>
+                    <div class="container">
+                        <img src="bart.jpg">
+                        <div class="text-box">BART</div>
+                    </div>
+                </td>
+                <td>
+                    <div class="container">
+                        <img src="lisa.jpg">
+                        <div class="text-box">LISA</div>
+                    </div>
+                </td>
+                <td>
+                    <div class="container">
+                        <img src="maggie.gif">
+                        <div class="text-box">MAGGIE</div>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+
+        <tbody class="friends">
+            <tr>
+                <th colspan="5"><span>Homer's friends</span></th>
+            </tr>
+            <tr>
+                <td>
+                    <div class="container">
+                        <img src="moe.jpg">
+                        <div class="text-box">MOE</div>
+                    </div>
+                </td>
+                <td>
+                    <div class="container">
+                        <img src="carl.png">
+                        <div class="text-box">CARL</div>
+                    </div>
+                </td>
+                <td>
+                    <div class="container">
+                        <img src="lenny.png">
+                        <div class="text-box">LENNY</div>
+                    </div>
+                </td>
+
+                <td>
+                    <div class="container">
+                        <img src="barney.png">
+                        <div class="text-box">BARNEY</div>
+                    </div>
+                </td>
+                <td>
+                    <div class="container">
+                        <img src="ned.gif">
+                        <div class="text-box">NED</div>
+                    </div>
+                </td>
+
+            </tr>
+        </tbody>
+
+        <tbody class="colleagues">
+            <tr>
+                <th colspan="5"><span>Homer's colleagues</span></th>
+            </tr>
+            <tr>
+                <td>
+                    <div class="container">
+                        <img src="donut_and_beer.jpg">
+                        <div class="text-box">DONUT & BEER</div>
+                    </div>
+                </td>
+                <td>
+                    <div class="container">
+                        <img src="mr_burns.gif">
+                        <div class="text-box">MR BURNS</div>
+                    </div>
+                </td>
+                <td>
+                    <div class="container">
+                        <img src="smithers.png">
+                        <div class="text-box">SMITHERS</div>
+                    </div>
+                </td>
+                <td>
+                    <div class="container">
+                        <img src="carl.png">
+                        <div class="text-box">CARL</div>
+                    </div>
+                </td>
+                <td>
+                    <div class="container">
+                        <img src="lenny.png">
+                        <div class="text-box">LENNY</div>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+
+    </table>
+
+</body>
+
+</html>

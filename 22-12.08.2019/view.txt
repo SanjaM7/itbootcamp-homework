@@ -1,0 +1,24 @@
+CREATE VIEW nizak AS 
+SELECT *, round(tezina / (visina * visina) * 10000,2) as bmi, 'nizak' as kategorija 
+FROM pacijenti
+WHERE tezina / (visina * visina) * 10000 < 20
+ORDER BY ime;
+
+CREATE VIEW idealan AS 
+SELECT *, round(tezina / (visina * visina) * 10000,2) as bmi, 'idealan' as kategorija 
+FROM pacijenti
+WHERE tezina / (visina * visina) * 10000 BETWEEN 20 AND 26.5
+ORDER BY ime;
+
+CREATE VIEW visok AS 
+SELECT *, round(tezina / (visina * visina) * 10000,2) as bmi, 'visok' as kategorija 
+FROM pacijenti
+WHERE tezina / (visina * visina) * 10000 BETWEEN 26.5 AND 31
+ORDER BY ime;
+
+CREATE VIEW izuzetno_visok AS 
+SELECT *, round(tezina / (visina * visina) * 10000,2) as bmi, 'izuzetno_visok' as kategorija 
+FROM pacijenti
+WHERE tezina / (visina * visina) * 10000 > 31
+ORDER BY ime;
+

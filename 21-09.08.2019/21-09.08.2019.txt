@@ -1,0 +1,31 @@
+CREATE TABLE korisnici (
+    id INT NOT NULL PRIMARY KEY,
+    korisnicko_ime VARCHAR(45)
+);
+CREATE TABLE profili (
+    id INT NOT NULL PRIMARY KEY,
+    adresa VARCHAR(45),
+    korisnici_id INT NOT NULL UNIQUE,
+    FOREIGN KEY(korisnici_id) REFERENCES korisnici(id) 
+);
+CREATE TABLE kategorije (
+    id INT NOT NULL PRIMARY KEY,
+    naziv VARCHAR(45)
+);
+CREATE TABLE objave (
+    id INT NOT NULL PRIMARY KEY,
+    naslov_objave VARCHAR(45)
+);
+CREATE TABLE objave_has_kategorije (
+    id INT NOT NULL PRIMARY KEY,
+    kategorije_id INT NOT NULL,
+    objave_id INT NOT NULL,
+    FOREIGN KEY(kategorije_id) REFERENCES kategorije(id),
+    FOREIGN KEY(objave_id) REFERENCES objave(id)
+);
+CREATE TABLE komentari (
+    id INT NOT NULL PRIMARY KEY,
+    tekst_komentara VARCHAR(45),
+    objave_id INT NOT NULL,
+    FOREIGN KEY(objave_id) REFERENCES objave(id)
+);

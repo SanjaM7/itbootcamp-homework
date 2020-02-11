@@ -1,0 +1,10 @@
+SELECT * FROM pacijenti WHERE tezina > (SELECT AVG(tezina) FROM pacijenti);
+
+SELECT * FROM pacijenti 
+WHERE tezina > (SELECT AVG(tezina) FROM pacijenti) AND ime LIKE "m%";
+
+SELECT COUNT(tezina) FROM pacijenti 
+WHERE tezina = (SELECT MAX(tezina) FROM pacijenti);
+
+SELECT * FROM pacijenti 
+WHERE tezina = (SELECT MIN(tezina) FROM pacijenti);

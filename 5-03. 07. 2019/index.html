@@ -1,0 +1,583 @@
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        .grid-row:before,
+        .grid-row:after {
+            content: "";
+            clear: both;
+            display: table;
+        }
+
+        .grid-col {
+            float: left;
+            width: 100%;
+        }
+
+        /*mobile*/
+        .grid-col.s1 {
+            width: 8.33333%
+        }
+
+        .grid-col.s2 {
+            width: 16.66666%
+        }
+
+        .grid-col.s3 {
+            width: 24.99999%
+        }
+
+        .grid-col.s4 {
+            width: 33.33333%
+        }
+
+        .grid-col.s5 {
+            width: 41.66666%
+        }
+
+        .grid-col.s6 {
+            width: 49.99999%
+        }
+
+        .grid-col.s7 {
+            width: 58.33333%
+        }
+
+        .grid-col.s8 {
+            width: 66.66666%
+        }
+
+        .grid-col.s9 {
+            width: 74.99999%
+        }
+
+        .grid-col.s10 {
+            width: 83.33333%
+        }
+
+        .grid-col.s11 {
+            width: 91.66666%
+        }
+
+        .grid-col.s12 {
+            width: 99.99999%
+        }
+
+        @media (max-width:601px) {
+            textarea {
+                width: 100% !important;                
+            }
+            .padding-left {padding-left: 0!important;}
+        }
+
+        /*tablet*/
+        @media (min-width:601px) {
+            .grid-col.m1 {
+                width: 8.33333%
+            }
+
+            .grid-col.m2 {
+                width: 16.66666%
+            }
+
+            .grid-col.m3,
+            .quarter {
+                width: 24.99999%
+            }
+
+            .grid-col.m4,
+            .third {
+                width: 33.33333%
+            }
+
+            .grid-col.m5 {
+                width: 41.66666%
+            }
+
+            .grid-col.m6,
+            .half {
+                width: 49.99999%
+            }
+
+            .grid-col.m7 {
+                width: 58.33333%
+            }
+
+            .grid-col.m8,
+            .twothird {
+                width: 66.66666%
+            }
+
+            .grid-col.m9,
+            .threequarter {
+                width: 74.99999%
+            }
+
+            .grid-col.m10 {
+                width: 83.33333%
+            }
+
+            .grid-col.m11 {
+                width: 91.66666%
+            }
+
+            .grid-col.m12 {
+                width: 99.99999%
+            }
+        }
+
+        /*desktop*/
+        @media (min-width:993px) {
+            .grid-col.l1 {
+                width: 8.33333%
+            }
+
+            .grid-col.l2 {
+                width: 16.66666%
+            }
+
+            .grid-col.l3 {
+                width: 24.99999%
+            }
+
+            .grid-col.l4 {
+                width: 33.33333%
+            }
+
+            .grid-col.l5 {
+                width: 41.66666%
+            }
+
+            .grid-col.l6 {
+                width: 49.99999%
+            }
+
+            .grid-col.l7 {
+                width: 58.33333%
+            }
+
+            .grid-col.l8 {
+                width: 66.66666%
+            }
+
+            .grid-col.l9 {
+                width: 74.99999%
+            }
+
+            .grid-col.l10 {
+                width: 83.33333%
+            }
+
+            .grid-col.l11 {
+                width: 91.66666%
+            }
+
+            .grid-col.l12 {
+                width: 99.99999%
+            }
+        }
+
+        body {
+            background-color: #d5f4e6;
+            color: #484f4f;
+            font-family: "Raleway", sans-serif;
+            font-size: 18px;
+        }
+
+        .container {
+            max-width: 800px;
+            background-color: #fefbd8;
+            margin: 30px auto;
+            padding: 25px 50px;
+            border: 2px solid #ccc;
+            border-radius: 5px;
+        }
+
+        div {
+            margin: 10px 0;
+        }
+        .padding-left {
+            padding-left: 30px;
+        }
+
+        fieldset {
+            background-color: #fafaf7;
+            margin: 25px 0;
+            padding: 20px;
+            border: 2px solid #ccc;
+            border-radius: 5px;
+        }
+
+        legend {
+            font-size: 24px;
+        }
+
+        input[type=text],
+        input[type=email],
+        input[type=password],
+        input[type=submit],
+        input[type=reset],
+        textarea,
+        select {
+            background-color: white;
+            padding: 10px 15px;
+            border: 2px solid #ccc;
+            border-radius: 4px;
+            outline: none;
+        }
+
+        input[type=text]:focus,
+        input[type=email]:focus,
+        input[type=password]:focus,
+        textarea:focus,
+        select:focus {
+            border: 2px solid #80ced6;
+        }
+
+        input[type=submit],
+        input[type=reset] {
+            padding: 12px 20px!important;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            min-width: 100px;
+           
+        }
+        .cont-center {
+            text-align: center;
+        }
+
+        input[type=submit] {
+            background-color: #ff5e57;
+        }
+
+        input[type=reset] {
+            background-color: #618685;
+        }
+
+        input[type=submit]:hover {
+            background-color: #ff3f34;
+            box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.2), 0 4px 20px 0 rgba(0, 0, 0, 0.19);
+        }
+
+        input[type=reset]:hover {
+            background-color: #587e76;
+            box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.2), 0 4px 20px 0 rgba(0, 0, 0, 0.19);
+        }
+        .margin-r {
+            margin-right: 16px;
+        }
+
+        textarea {
+            width: 75%;
+            height: 150px;
+            resize: none;
+        }
+
+        .flex-container {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        /*checkbox*/
+        input[type=checkbox] {
+            position: absolute;
+            opacity: 0;
+            height: 0;
+            width: 0;
+        }
+
+        input[type=checkbox]+label {
+            position: relative;
+            cursor: pointer;
+            padding: 0;
+        }
+
+        input[type=checkbox]+label:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 150px;
+            margin-right: 10px;
+            display: inline-block;
+            vertical-align: text-top;
+            width: 20px;
+            height: 20px;
+            background: white;
+            border: 2px solid #ccc;
+        }
+
+
+        input[type=checkbox]:hover+label:before {
+            background: #80ced6;
+        }
+
+
+        input[type=checkbox]:focus+label:before {
+            box-shadow: 0 0px 8px #618685;
+        }
+
+
+        input[type=checkbox]:checked+label:before {
+            background: #80ced6;
+        }
+
+        input[type=checkbox]:checked+label:after {
+            content: '';
+            position: absolute;
+            top: 5px;
+            left: 154px;
+            border-left: 2px solid white;
+            border-bottom: 2px solid white;
+            height: 6px;
+            width: 13px;
+            transform: rotate(-45deg);
+        }
+
+        /*radio button*/
+        input[type=radio] {
+            position: absolute;
+            opacity: 0;
+            height: 0;
+            width: 0;
+        }
+
+        input[type=radio]+label {
+            position: relative;
+            cursor: pointer;
+            padding: 0;
+        }
+
+        input[type=radio]+label:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 150px;
+            margin-right: 10px;
+            display: inline-block;
+            vertical-align: middle;
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            background: white;
+            border: 2px solid #ccc;
+        }
+
+        input[type=radio]:hover+label:before {
+            background: #80ced6;
+        }
+
+
+        input[type=radio]:focus+label:before {
+            box-shadow: 0px 0px 8px #618685;
+
+        }
+
+
+        input[type=radio]:checked+label:before {
+            background: #80ced6;
+        }
+
+        input[type=radio]:checked+label:after {
+            content: '';
+            position: absolute;
+            top: 8px;
+            left: 158px;
+            height: 8px;
+            width: 8px;
+            border-radius: 50%;
+            background: white;
+        }
+
+        /*input file*/
+        .input-file-container {
+            background-color: white;
+            color: #484f4f;
+            border: 2px solid #ccc;
+            border-radius: 4px;
+            margin: 10px 0;
+
+        }
+
+        input[type='file'] {
+            display: none;
+        }
+
+
+        .btn-trigger {
+            background-color: #618685;
+            color: white;
+            border: none;
+            border-top-left-radius: 4px;
+            border-bottom-left-radius: 4px;
+            padding: 8px 16px;
+            outline: none;
+            cursor: pointer;
+            white-space: nowrap;
+
+        }
+
+        .btn-trigger:hover {
+            background-color: #587e76;
+            box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.2), 0 4px 20px 0 rgba(0, 0, 0, 0.19);
+        }
+
+        .file-return {
+            font-size: 0.9em;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div>
+        <div class="container">
+            <form>
+                <fieldset>
+                    <legend>Login details</legend>
+                    <div class="grid-row flex-container">
+                        <span class="grid-col l3">
+                            <label style="align-items: center;">Name: </label>
+                        </span>
+                        <span class="grid-col l9">
+                            <input type="text">
+                        </span>
+                    </div>
+                    <div class="grid-row flex-container">
+                        <span class="grid-col l3">
+                            <label style="align-items: center;">E-mail: </label>
+                        </span>
+                        <span class="grid-col l9">
+                            <input type="email">
+                        </span>
+                    </div>
+                    <div class="grid-row flex-container">
+                        <span class="grid-col l3">
+                            <label>Password: </label>
+                        </span>
+                        <span class="grid-col l9">
+                            <input type="password">
+                        </span>
+                    </div>
+                </fieldset>
+                <fieldset>
+                    <legend>Your feedback</legend>
+                    <div>
+                        <label>Please check all the emotions that apply to you: </label><br>
+                        <div class="padding-left">
+                            <div>
+                                <input type="checkbox" name="emotion" value="angry" id="checkbox1">
+                                <label for="checkbox1">Angry</label><br>
+                            </div>
+                            <div>
+                                <input type="checkbox" name="emotion" value="sad" id="checkbox2">
+                                <label for="checkbox2">Sad</label><br>
+                            </div>
+                            <div>
+                                <input type="checkbox" name="emotion" value="happy" id="checkbox3" checked>
+                                <label for="checkbox3">Happy</label><br>
+                            </div>
+                            <div>
+                                <input type="checkbox" name="emotion" value="ambivalent" id="checkbox4">
+                                <label for="checkbox4">Ambivalent</label><br>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <label>How satisfied were you with our service? </label><br>
+                        <div class="padding-left">
+                            <div>
+                                <input type="radio" name="satisfaction" value="5" id="radio5">
+                                <label for="radio5">Very satisfied</label><br>
+                            </div>
+                            <div>
+                                <input type="radio" name="satisfaction" value="4" id="radio4">
+                                <label for="radio4">Very satisfied</label><br>
+                            </div>
+                            <div>
+                                <input type="radio" name="satisfaction" value="3" id="radio3">
+                                <label for="radio3">Didn't care</label><br>
+                            </div>
+                            <div>
+                                <input type="radio" name="satisfaction" value="2" id="radio2">
+                                <label for="radio2">Dissatisfied</label><br>
+                            </div>
+                            <div>
+                                <input type="radio" name="satisfaction" value="1" id="radio1">
+                                <label for="radio1">Very dissatisfied</label><br>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="grid-row">
+                        <span class="grid-col l3">
+                            <laber>Further comments: </laber>
+                        </span>
+                        <span class="grid-col l9">
+                            <textarea></textarea>
+                        </span>
+                    </div>
+                </fieldset>
+                <div>
+                    <label>Bio photo: </label>
+                    <div class="input-file-container">
+                        <input type="file" class="real-input-file" id="real-input" />
+                        <button type="button" class="btn-trigger"><i class="fa fa-plus margin-r"></i>Select
+                            File...</button>
+                        <span class="file-return">No file selected</span>
+                    </div>
+                </div>
+                <div>
+                    <label>Location visited: </label>
+                    <select>
+                        <option value="0">Select Location: </option>
+                        <option value="indonesia">Indonesia</option>
+                        <option value="new zealand">New Zealand</option>
+                        <option value="peru">Peru</option>
+                    </select>
+                </div>
+                <div class="grid-row cont-center">
+                    <div class="grid-col m6">
+                        <input type="reset" value="Reset" class="btn-reset">
+                    </div>
+                    <div class="grid-col m6">
+                        <input type="submit" value="Submit">
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script>
+        // Toggle between real and fake file input
+        const realInput = document.getElementById('real-input');
+        const btnTrigger = document.querySelector('.btn-trigger');
+        const fileReturn = document.querySelector('.file-return');
+        const btnReset = document.querySelector('.btn-reset');
+        btnTrigger.addEventListener('click', () => {
+            realInput.click();
+        });
+        realInput.addEventListener('change', () => {
+            const name = realInput.value.split(/\\|\//).pop();
+            fileReturn.innerHTML = name;
+        });
+        
+        btnReset.addEventListener('click', () => {
+            fileReturn.innerHTML = 'No file selected';
+        });
+    </script>
+
+</body>
+
+</html>

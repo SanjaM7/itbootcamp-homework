@@ -1,0 +1,7 @@
+CREATE TABLE `itbootcamp`.`products` ( `productId` INT NULL , `productCode` CHAR(5) NOT NULL DEFAULT '100' , `name` VARCHAR(30) NOT NULL DEFAULT 'Oreo' , `quantity` SMALLINT NOT NULL , `price` INT NULL , PRIMARY KEY (`productId `)) ENGINE = InnoDB;
+
+ALTER TABLE `products` CHANGE `quantity` `quantity` SMALLINT(6) NOT NULL DEFAULT '0';
+
+ALTER TABLE `products` CHANGE `price` `price` DECIMAL(7,2) NOT NULL DEFAULT '0';
+
+ALTER TABLE `products` ADD `description` TEXT NOT NULL AFTER `quantity`;

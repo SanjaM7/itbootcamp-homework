@@ -1,0 +1,29 @@
+
+body {
+    background-color: #f7f1e3;
+    color: #474787; 
+    font-family: "Georgia", sans-serif; 
+    font-size: 20px;
+}
+.static {
+    position: static;
+}
+.relative {
+    position: relative;
+    left: 100px;
+}
+.parent-relative {
+    position: relative;
+    top: 100px;
+    left: 50px;
+}
+.absolute {
+    position: absolute;
+    bottom: 50px;
+    left: 100px;
+}
+.fixed {
+    position: fixed;
+    top: 30px;
+    right: 5px;
+}
